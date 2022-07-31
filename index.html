@@ -809,14 +809,14 @@
         function DrawFunction() {
             SetGrid();
             var expr = document.getElementById('txFunction').value;
-            expr = expr.replace('X','x');
+            expr = expr.replaceAll('X','x');
             ctx.fillStyle = "#0000FF";
             lastX = -1;
             lastY = -1;
 
             for (x = 0; x < w; x++) {
                 realX = xStart + x / xStepWidth;
-                var exprCalc = expr.replace('x', realX);
+                var exprCalc = expr.replaceAll('x', realX);
                 try {
                     realY = math.eval(exprCalc);
                     imgX = x;
